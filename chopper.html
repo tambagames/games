@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ <head>
+	 <title>play chopper attack a free online game</title>
+	 <meta charset="UTF-8"/>
+	 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	 <link rel="stylesheet" href="chopper.css" type="text/css"/>
+	 <link rel="manifest" href="manifest.json">
+	 <script src="chopper.js"></script>
+ </head>
+	 <body>
+	<div id="gamestart" class="gamelayer">
+	<h3 i id="level">Level</h3>
+	<button type="button" id="btn" onClick="Game.L1()">L1</button>
+	<button type="button" onClick="Game.L2()">L2</button>
+	<button type="button" id="btn" onClick="Game.L3()">L3</button>
+	</div>
+	<div id="gamearea" class="gamelayer">
+	<img src="bomb.png" id="bomb">
+	<img id="helicopter" src="chopper.gif">
+	<p id="tracker">+</p>
+	<img id="laser" src="laser.png">
+	<img src="tank.png" id="tank">
+	<button type="button" id="play" onClick="Chopper.move()">Play</button>
+	<img id="shoot" src="shoot.png" onClick="Laser.fire()">
+	<p id="info">
+	</div>
+	<div id="gameend" class="gamelayer">
+	<h2 id="gameover">Game Over</h2>
+	<h3 id="tryagain" onClick="Game.init()">Try again</h3>
+	</div>
+	<button type="button" id="left" onClick="Tracker.moveLeft()">L</button>
+	<button type="button" id="right" onClick="Tracker.moveRight()">R</button>
+	<button type="button" id="up" onClick="Tracker.moveUp()">U</button>
+	<button type="button" id="down" onClick="Tracker.moveDown()">D</button>
+	<button type="button" id="stopp" onClick="Tracker.Stop()">S</button>
+	 </body>
+ </html>

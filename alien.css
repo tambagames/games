@@ -1,0 +1,99 @@
+body {
+	 background: #FFFFFF;
+ }
+ 
+ #gameover{
+ position: absolute;
+ left: 5%;
+ width: 95%;
+ height: 65%;
+background-color:black;
+display: none;
+}
+
+#gover{
+	margin-top: 30%;
+}
+
+#btn{
+	position: absolute;
+	left: 80%;
+	top: 120%;
+}
+
+#shoot{
+	position: absolute;
+	left: 80%;
+	top: 120%;
+	width: 15%;
+	height: 15%;
+	display: none;
+}
+
+#left{
+	position: absolute;
+	left: 0px;
+	top: 230px;
+	width: 50px;
+	height: 50px;
+}
+
+#right{
+	position: absolute;
+	left: 120px;
+	top: 230px;
+	width: 40px;
+	height: 50px;
+}
+
+#stop{
+	position: absolute;
+	left: 60px;
+	top: 280px;
+	width: 40px;
+	height: 40px;
+}
+
+#info{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: red;
+	font-size: 12px;
+}
+
+#winscreen{
+	position: absolute;
+	width: 95%;
+	height: 60%;
+	background: black;
+	display: none;
+}
+
+#win{
+	position: absolute;
+	left: 35%;
+	top: 40%;
+	color: yellow;
+}
+
+#gamestart{
+	position: absolute;
+	width: 95%;
+	height: 60%;
+	background: black;
+	display: none;
+}
+
+#start{
+	position: absolute;
+	top: 45%;
+	left: 37%;
+}
+
+#level{
+	position: absolute;
+	left: 36.5%;
+	top: 20%;
+	color: teal;
+}

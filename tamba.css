@@ -1,0 +1,54 @@
+body {
+	 background: white;
+ }
+ 
+ #alien{
+ width: 95%;
+ height: auto;
+	position: absolute;
+	top: 120px;
+	border: solid;
+	border-width: thin;
+}
+
+.h{
+	color: red;
+}
+
+.p{
+	color: black;
+	margin: 1%;
+}
+
+header{
+	color: green;
+	font-size: 30px;
+	margin-left:62%;
+}
+
+.img{
+	margin-left: 12%;
+}
+
+#chopper{
+     width: 95%;
+     height: auto;
+	position: absolute;
+	top: 550px;
+	border: solid;
+	border-width: thin;
+}
+
+#t{
+position: absolute;
+top:80px;
+width: 95%;
+border-bottom: solid;
+border-width:thin;
+border-color: black;
+}
+
+#foot{
+	position: absolute;
+	top: 950px;
+}

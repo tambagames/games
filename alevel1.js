@@ -27,7 +27,7 @@ this.getPanelColor = function (){
 document.getElementById(this.ID).style.backgroundColor = this.PanelColor;
 };
 }
-var Panel=new Panel(10,10,0.95*screen.width,200,'black','panel');
+var Panel=new Panel(10,10,0.95*screen.width,0.6*screen.Height,'black','panel');
 //alien constructor
 function Alien(Xpos,Ypos,Width,
 /*Xpos is left position,Ypos is top position,Speed is duration of setTimeout function,rightBorder and leftBorder are the limits of alien travel or wall positions*/

@@ -76,7 +76,7 @@ gamearea.style.backgroundColor = this.panelColor;
 };
 }
 //panel object
-var Panel = new Panel(10,10,0.95*screen.width,0.6*screen.height,"black");
+var Panel = new Panel(0.025*screen.width,0.05*screen.height,0.95*screen.width,0.6*screen.height,"black");
 //ttracker constructor
 function Tracker(Xpos,Ypos,Width,Height,Xstep,Ystep,Speed,rightWallpos,leftWallpos){
 this.Xpos = Xpos;
@@ -229,7 +229,7 @@ setTimeout(end,1000);
 this.moveUp = function chopperup(){
 helicopter.style.top = parseInt(helicopter.style.top)-0.5+"px";
 bomb.style.top = parseInt(bomb.style.top)-0.5+"px";
-autochopperup = setTimeout(chopperup,80);
+autochopperup = setTimeout(chopperup,120);
 if(parseInt(helicopter.style.top)<10){
 ran = Math.floor(Math.random()*Panel.Height/2);
 helicopter.style.left = "10px";

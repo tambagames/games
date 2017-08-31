@@ -1,0 +1,117 @@
+body {
+	 background: #FFFFFF;
+ }
+ 
+ .gamelayer{
+ position: absolute;
+ left:2.5%;
+ top: 5%;
+ width: 95%;
+ height: 60%;
+ background: black;
+ display: none;
+}
+ 
+ #info{
+	position: absolute;
+	left:70%;
+	top: 10%;
+	color: red;
+}
+
+#btn{
+     position: relative;
+}
+
+#left{
+	position: absolute;
+	left: 2%;
+	top:70%;
+	display: none;
+}
+
+#right{
+	position: absolute;
+	left:70%;
+	top: 70%;
+	display: none;
+}
+
+#up{
+	position: absolute;
+	left: 12%;
+	top: 70%;
+	display: none;
+}
+
+#down{
+	position: absolute;
+	left:60%;
+	top: 70%;
+	display: none;
+}
+
+#stopp{
+	position: absolute;
+	left: 35%;
+	top: 70%;
+	display: none;
+}
+
+#gameover{
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	color: yellow;
+}
+
+#tryagain{
+	position: absolute;
+	top: 45%;
+	left: 32%;
+	color: teal;
+}
+
+#play{
+	position: absolute;
+	top: 70%;
+	left: 80%;
+}
+
+#shoot{
+	position: absolute;
+	top: 70%;
+	left: 80%;
+	width: 40px;
+	height: 40px;
+	display: none;
+}
+
+#start{
+	position: absolute;
+	top: 45%;
+	left: 40%;
+}
+
+#level{
+	font-size: 30px;
+	color: Teal;
+	margin-left: 35%;
+}
+
+#winscreen{
+	position: absolute;
+	left: 2.5%;
+	top:5%;
+	width: 95%;
+	height: 60%;
+	background: black;
+	display: none;
+}
+
+#win{
+	position: absolute;
+	left: 35%;
+	top: 40%;
+	color: yellow;
+}

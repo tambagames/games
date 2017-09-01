@@ -1,17 +1,10 @@
 var count = 0;
 //game object 
 var Game = {
-L1:function (){
-window.location = "level1.html";
-},
-L2:function (){
-window.location = "level2.html";
-},
 init:function (){
+gamestart.style.display = "block";
 info.innerHTML  = "";
 count = 0;
-gameend.style.display = "none";
-gamestart.style.display  = "block";
 Panel.getX();
 Panel.getY();
 Panel.getW();
@@ -22,10 +15,6 @@ Tracker.getY();
 Tracker.getW();
 Tracker.getH();
 Tracker.getColor();
-Tracker.moveUpArrow();
-Tracker.moveDownArrow();
-Tracker.moveRightArrow();
-Tracker.moveLeftArrow();
 Tank.pos();
 Chopper.getX();
 Chopper.getY();
@@ -51,7 +40,6 @@ gamearea.style.display = "none";
 gameend.style.display = "block";
 Chopper.stop();
 },
-//try again method
 tryy:function (){
 gameend.style.display = "none";
 gamearea.style.display = "block";
@@ -129,14 +117,14 @@ Tracker.moveLeft();
 }
 });
 };
-this.moveUpArrow = function (){
+this.moveArrowUp = function (){
 document.addEventListener("keydown",function (){
 if(event.code=="ArrowUp"){
 Tracker.moveUp();
 }
 });
 };
-this.moveDownArrow = function (){
+this.moveArrowDown = function (){
 document.addEventListener("keydown",function (){
 if(event.code=="ArrowDown"){
 Tracker.moveDown();
@@ -172,9 +160,6 @@ clearTimeout(auto);
 }
 };
 this.Stop= function (){
-clearTimeout(auto);
-};
-this.stop = function (){
 clearTimeout(auto);
 };
 }
@@ -221,16 +206,10 @@ helicopter.style.height = this.Height+"px";
 bomb.style.height = "5px";
 };
 this.moveRight = function chopperright(){
+ran = Math.floor(Math.random()*Panel.Width/2);
 helicopter.style.left = parseInt(helicopter.style.left)+Xstep+"px";
 bomb.style.left = parseInt(bomb.style.left)+Xstep+"px";
 autochopperright = setTimeout(chopperright,Speed);
-if(parseInt(helicopter.style.left)>rightWallpos){
-ran = Math.floor(Math.random()*Panel.Height/2);
-helicopter.style.left = "10px";
-bomb.style.left = "10px";
-helicopter.style.top = ran+"px";
-bomb.style.top = ran+"px";
-}
 if(parseInt(helicopter.style.left)>parseInt(tank.style.left)+10 && parseInt(helicopter.style.left)<parseInt(tank.style.left)+15){
 Chopper.fire();
 function end(){
@@ -238,24 +217,34 @@ Game.endgame();
 }
 setTimeout(end,1000);
 }
+if(parseInt(helicopter.style.left)==ran){
+clearTimeout(autochopperright);
+Chopper.moveDown();
+}
+};
+this.moveDown = function chopperdown(){
+helicopter.style.top = parseInt(helicopter.style.top)+2+"px";
+bomb.style.top = parseInt(bomb.style.top)+2+"px";
+autochopperdown = setTimeout(chopperdown,20);
+if(parseInt(helicopter.style.top)>Panel.Height/2){
+clearTimeout(autochopperdown);
+Chopper.moveRight();
+}
 };
 this.moveUp = function chopperup(){
-helicopter.style.top = parseInt(helicopter.style.top)-0.5+"px";
-bomb.style.top = parseInt(bomb.style.top)-0.5+"px";
-autochopperup = setTimeout(chopperup,120);
-if(parseInt(helicopter.style.top)<10){
 ran = Math.floor(Math.random()*Panel.Height/2);
-helicopter.style.left = "10px";
-bomb.style.left = "10px";
-helicopter.style.top = ran+"px";
-bomb.style.top = ran+"px";
+helicopter.style.top = parseInt(helicopter.style.top)-2+"px";
+bomb.style.top = parseInt(bomb.style.top)-2+"px";
+autochopperup = setTimeout(chopperup,20);
+if(parseInt(helicopter.style.top)<ran){
+clearTimeout(autochopperup);
+Chopper.moveRight();
 }
 };
 this.move = function (){
 play.style.display = "none";
 shoot.style.display = "block";
 Chopper.moveRight();
-Chopper.moveUp();
 };
 this.explode = function (){
 bomb.style.width = "50px";
@@ -291,7 +280,6 @@ clearTimeout(autofire);
 };
 this.stop = function (){
 clearTimeout(autochopperright);
-clearTimeout(autochopperup);
 };
 }
 //chopper object
@@ -325,12 +313,17 @@ laser.style.left = Panel.Width/1.5+"px";
 }
 setTimeout(ret,1000);
 if(parseInt(laser.style.left)>parseInt(helicopter.style.left)-20 && parseInt(laser.style.left)<parseInt(helicopter.style.left)+30){
-if(parseInt(laser.style.top)>parseInt(helicopter.style.top)-20 && parseInt(laser.style.top)<parseInt(helicopter.style.top)+20){
+if(parseInt(laser.style.top)>parseInt(helicopter.style.top)-30 && parseInt(laser.style.top)<parseInt(helicopter.style.top)+30){
 count = count+1;
 info.innerHTML  =count + "down";
 Chopper.explode();
 if(count==10){
-window.location = "level2.html";
+gamearea.style.display = "none";
+winscreen.style.display = "block";
+function back(){
+window.location = "chopper.html";
+}
+setTimeout(back,5000);
 }
 }
 }

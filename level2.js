@@ -67,7 +67,7 @@ gamearea.style.backgroundColor = this.panelColor;
 };
 }
 //panel object
-var Panel = new Panel(0.025*screen.width,0.05*screen.height,0.95*screen.width,0.6*screen.height,"black");
+var Panel = new Panel(0.025*screen.width,0.05*screen.height,0.95*screen.width,200,"black");
 //ttracker constructor
 function Tracker(Xpos,Ypos,Width,Height,Xstep,Ystep,Speed,rightWallpos,leftWallpos){
 this.Xpos = Xpos;

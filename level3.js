@@ -2,10 +2,9 @@ var count = 0;
 //game object 
 var Game = {
 init:function (){
+gamestart.style.display = "block";
 info.innerHTML  = "";
 count = 0;
-gameend.style.display = "none";
-gamestart.style.display = "block";
 Panel.getX();
 Panel.getY();
 Panel.getW();
@@ -39,6 +38,14 @@ stopp.style.display = "block";
 endgame:function (){
 gamearea.style.display = "none";
 gameend.style.display = "block";
+Chopper.stop();
+},
+tryy:function (){
+gameend.style.display = "none";
+gamearea.style.display = "block";
+Chopper.getX();
+Chopper.getY();
+Chopper.move();
 }
 };
 //game area panel constructor
@@ -67,7 +74,7 @@ gamearea.style.backgroundColor = this.panelColor;
 };
 }
 //panel object
-var Panel = new Panel(0.025*screen.width,0.05*screen.height,0.95*screen.width,200,"black");
+var Panel = new Panel(0.025*screen.width,0.05*screen.height,0.95*screen.width,0.6*screen.height,"black");
 //ttracker constructor
 function Tracker(Xpos,Ypos,Width,Height,Xstep,Ystep,Speed,rightWallpos,leftWallpos){
 this.Xpos = Xpos;
@@ -274,6 +281,9 @@ bomb.style.left = parseInt(helicopter.style.left)+"px";
 if(parseInt(helicopter.style.left)>parseInt(tank.style.left)+15){
 clearTimeout(autofire);
 }
+};
+this.stop = function (){
+clearTimeout(autochopperright);
 };
 }
 //chopper object
